@@ -1,0 +1,214 @@
+:root {
+  --bg-color: #f4f6f8;
+  --text-color: #333;
+  --primary: #007acc;
+  --low: #a0c4ff;
+  --medium: #ffd6a5;
+  --high: #ffadad;
+  --urgent: #ff6392;
+}
+
+body.dark {
+  --bg-color: #1e1e2f;
+  --text-color: #f1f1f1;
+  --primary: #00bcd4;
+  --low: #3a506b;
+  --medium: #ffc75f;
+  --high: #f76c6c;
+  --urgent: #ff4e50;
+  background-color: #1e1e2f;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: white;
+}
+
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-menu img {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  color: black;
+  min-width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.button-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.button-bar button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.button-bar button:hover {
+  background: #005a8c;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+form#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+form#task-form input,
+form#task-form textarea,
+form#task-form select,
+form#task-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form#task-form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form#task-form button:hover {
+  background: #005a8c;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters select {
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.stats {
+  margin-bottom: 1.5rem;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.task-list-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list-section li {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 8px solid var(--low);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: background 0.3s;
+}
+
+li[data-priority='Urgent'] {
+  border-left-color: var(--urgent);
+}
+
+li[data-priority='High'] {
+  border-left-color: var(--high);
+}
+
+li[data-priority='Medium'] {
+  border-left-color: var(--medium);
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: end;
+}
+
+.task-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+}

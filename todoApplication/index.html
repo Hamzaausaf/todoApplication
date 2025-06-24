@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza To-Do App</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo">🎓 To-Do Tracker</div>
+    <div class="profile-menu">
+  <img src="https://ui-avatars.com/api/?name=Student+Name&background=007acc&color=ffffff&bold=true" alt="Profile" id="profile-icon" />
+  <div class="dropdown-menu" id="dropdown-menu">
+    <a href="#">👤 My Profile</a>
+    <a href="#">⚙ Settings</a>
+    <a href="#">🔓 Logout</a>
+  </div>
+</div>
+  </header>
+  <div class="button-bar">
+    <button id="toggle-dark">🌙 Toggle Dark Mode</button>
+    <button id="export-csv">📁 Export CSV</button>
+    <button id="export-pdf">📄 Export PDF</button>
+  </div>
+
+  <main>
+    <section class="task-form-section">
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task Title" required />
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <input type="date" id="task-date" required />
+        <select id="task-priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="Urgent">Urgent</option>
+        </select>
+        <select id="task-category">
+          <option value="Assignments">Assignments</option>
+          <option value="Projects">Projects</option>
+          <option value="Exams">Exams</option>
+          <option value="Research">Research</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="filters">
+      <select id="filter-status">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <select id="filter-priority">
+        <option value="all">All Priorities</option>
+        <option value="Urgent">Urgent</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <select id="filter-category">
+        <option value="all">All Categories</option>
+        <option value="Assignments">Assignments</option>
+        <option value="Projects">Projects</option>
+        <option value="Exams">Exams</option>
+        <option value="Research">Research</option>
+      </select>
+
+      <select id="sort-by">
+        <option value="dueDate">Sort by Due Date</option>
+        <option value="priority">Sort by Priority</option>
+        <option value="category">Sort by Category</option>
+      </select>
+    </section>
+
+    <section class="stats">
+      <p>Total Tasks: <span id="total-tasks">0</span></p>
+      <p>Completed: <span id="completed-tasks">0</span></p>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </section>
+
+    <section class="task-list-section">
+      <ul id="task-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Designed for Productivity</p>
+  </footer>
+  <script src="todo.js"></script>
+</body>
+</html>
